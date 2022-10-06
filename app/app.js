@@ -1,31 +1,51 @@
+//-----tela inicial-----
+
+//saldos, despesas e balanço
 const saldoAtual = document.querySelector('#saldoAtual')
 const receitasMes = document.querySelector('#receitasMes')
 const despesasMes = document.querySelector('#despesasMes')
 
-const transacoesUl = document.querySelector('#transacoesUl')
-
+//botões para adicionar transações
 const mostrarTransacoes = document.querySelector('#mostrarTransacoes')
 const btnTransitions = document.querySelector('#btnTransitions')
 const btnReceitas = document.querySelector('#btnReceitas')
 const btnDespesas = document.querySelector('#btnDespesas')
 
+//transações
 const form = document.querySelector('#form')
+const transacoesUl = document.querySelector('#transacoesUl')
+const h2Form = document.querySelector('#h2Form')
 
+//links nav
+const btnTransacoes = document.querySelector('#btnTransacoes')
+const home = document.querySelector('#home')
+const transacoesLink = document.querySelector('#transacoes')
+
+//
 const data = document.querySelector('#data')
 const tipo = document.querySelector('#tipo')
 const descricao = document.querySelector('#descricao')
 const valor = document.querySelector('#valor')
 
-const h2Form = document.querySelector('#h2Form')
+
 
 let todasTransacoes = []
 
 function funcoesDeBotoes() {
 
-    function btnMostrarBtns(btn, btn2, btn3) {
+    function btnMostrar(btn, btn2, btn3) {
         btn.onclick = () => {
             btn2.classList.toggle('none')
             btn3.classList.add('none')
+        }
+    }
+
+    function btnMostraRemove(btn, btn2, btn3, btn4) {
+        btn.onclick = e => {
+            e.preventDefault()
+            btn2.classList.add('none')
+            btn3.classList.remove('none')
+            btn4.classList.add('none')
         }
     }
 
@@ -71,7 +91,8 @@ function funcoesDeBotoes() {
     }
 
     return {
-        btnMostrarBtns,
+        btnMostrar,
+        btnMostraRemove,
         btnRemove,
         receita,
         despesa
@@ -79,9 +100,10 @@ function funcoesDeBotoes() {
 }
 const btn = funcoesDeBotoes()
 
-btn.btnMostrarBtns(mostrarTransacoes, btnTransitions, form)
+btn.btnMostrar(mostrarTransacoes, btnTransitions, form)
 btn.receita(btnReceitas)
 btn.despesa(btnDespesas)
+btn.btnMostraRemove(btnTransacoes, home, transacoesLink, form)
 
 const transacoes = (data, tipo, descricao, valor) => {
 
@@ -94,6 +116,7 @@ const transacoes = (data, tipo, descricao, valor) => {
 
 }
 
+//fução factory
 function metodos(a) {
 
     function balanco(a) {
@@ -149,7 +172,7 @@ function metodos(a) {
         li.innerHTML = `
         <span class="span">${x.data}</span> 
         <span class="span spanDesc">${x.descricao}</span> 
-        <span class="span">${x.valor}</span>
+        <span class="span">${x.valor}.00</span>
         `
 
         span.classList.add('spanTipo')
