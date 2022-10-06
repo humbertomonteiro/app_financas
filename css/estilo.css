@@ -85,7 +85,7 @@ body {
     background-color: rgb(255, 255, 255);
     width: 450px;
     padding: 10px;
-    margin: 0 10px 15px 10px;
+    margin: 0 5px 15px 5px;
     border-radius: 0 5px 5px 0;
 }
 
@@ -205,12 +205,16 @@ body {
 @media(max-width: 520px) {
     .transacoesUl li {
         font-size: .7em;
-        width: 95%;
+        width: 90%;
     }
 }
 
 @media(max-width: 420px) {
     .form .btn {
         width: 150px;
+    }
+
+    .card h2 {
+        font-size: 1.2em;
     }
 }
