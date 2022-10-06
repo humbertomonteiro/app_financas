@@ -20,56 +20,64 @@ const h2Form = document.querySelector('#h2Form')
 
 let todasTransacoes = []
 
-class Btn {
+function funcoesDeBotoes() {
 
-    btnMostrarBtns(btn, btn2, btn3) {
+    function btnMostrarBtns(btn, btn2, btn3) {
         btn.onclick = () => {
             btn2.classList.toggle('none')
             btn3.classList.add('none')
         }
     }
 
-    btnRemove(btn) {
+    function btnRemove(btn) {
         btn.classList.remove('none')
     }
 
-    receita(btn) {
+    function receita(btn) {
         btn.onclick = () => {
             form.setAttribute('receita', true)
             form.removeAttribute('despesa')
-            h2Form.innerHTML ='Reginstro de nova Receitas'
-            tipo.innerHTML = `<option value="1">Salario</option>
-            <option value="2">Renda Extra</option>
-            <option value="3">Presente</option>
-            <option value="4">Prêmio</option>
-            <option value="5">Direitos</option>
-            <option value="6">Para pagar cartão</option>
-            <option value="7">Bico</option>
-            <option value="8">Outros</option>`
+            h2Form.innerHTML ='Reginstro de novas Receitas'
+            tipo.innerHTML = `<option>Salario</option>
+            <option>Renda Extra</option>
+            <option>Presente</option>
+            <option>Prêmio</option>
+            <option>Direitos</option>
+            <option>Para pagar cartão</option>
+            <option>Bico</option>
+            <option>Outros</option>`
             this.btnRemove(form)
         }
     }
 
-    despesa(btn) {
+    function despesa(btn) {
         btn.onclick = () => {
             form.setAttribute('despesa', true)
             form.removeAttribute('receita')
-            h2Form.innerHTML ='Reginstro de nova Despesas'
-            tipo.innerHTML = `<option value="1">Alimentação</option>
-            <option value="2">Educação</option>
-            <option value="3">Lazer</option>
-            <option value="4">Saúde</option>
-            <option value="5">Transporte</option>
-            <option value="6">Assinaturas</option>
-            <option value="7">Compras</option>
-            <option value="8">Moradia</option>
-            <option value="9">Presente</option>
-            <option value="10">Outros</option>`
+            h2Form.innerHTML ='Reginstro de novas Despesas'
+            tipo.innerHTML = `<option>Alimentação</option>
+            <option>Educação</option>
+            <option>Lazer</option>
+            <option>Saúde</option>
+            <option>Transporte</option>
+            <option>Assinaturas</option>
+            <option>Compras</option>
+            <option>Moradia</option>
+            <option>Presente</option>
+            <option>Outros</option>`
             this.btnRemove(form)
         }
+
+    }
+
+    return {
+        btnMostrarBtns,
+        btnRemove,
+        receita,
+        despesa
     }
 }
-const btn = new Btn
+const btn = funcoesDeBotoes()
 
 btn.btnMostrarBtns(mostrarTransacoes, btnTransitions, form)
 btn.receita(btnReceitas)
@@ -133,16 +141,22 @@ function metodos(a) {
     function addTransacoes(x) {
 
         const li = document.createElement('li')
+        const span = document.createElement('span')
     
         if(x.valor < 0) li.classList.add('despesa')
         else li.classList.add('receita')
     
         li.innerHTML = `
-        <span>${x.descricao}</span> 
-        <span>${x.valor}</span>
-        <span>${x.data}</span> `
+        <span class="span">${x.data}</span> 
+        <span class="span spanDesc">${x.descricao}</span> 
+        <span class="span">${x.valor}</span>
+        `
+
+        span.classList.add('spanTipo')
+        span.innerHTML = `${x.tipo}`
     
         transacoesUl.prepend(li)
+        transacoesUl.prepend(span)
     }
 
     return {
@@ -170,10 +184,10 @@ const setarMovimentacao = () => {
     const descricaoV = descricao.value
     const valorV = valor.value
 
-//     if(dataV === '' || tipoV === '' || descricaoV === '' || valorV === '' || isNaN(valorV)) {
-//         alert('Verifique se todos os campos foram preenchidos corretamente.')
-//         return
-//     }
+    if(dataV === '' || tipoV === '' || descricaoV === '' || valorV === '' || isNaN(valorV)) {
+        alert('Verifique se todos os campos foram preenchidos corretamente.')
+        return
+    }
 
     const despesa = form.getAttribute('despesa')  
 
@@ -208,15 +222,18 @@ const movimentacoes = metodos()
 function init() {
     movimentacoes.atualizaTransacoes()
     movimentacoes.balanco(todasTransacoes)
+    transacoesUl.innerHTML = ''
     todasTransacoes.forEach(movimentacoes.addTransacoes)
 }
 
 init()
 
-// console.log(movimentacoes.balanco(todasTransacoes))
-
 form.addEventListener('submit', e => {
     e.preventDefault()
     setarMovimentacao()
     init()
+    data.value = ''
+    tipo.value = ''
+    descricao.value = ''
+    valor.value = ''
 })

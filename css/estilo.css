@@ -21,7 +21,7 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.479);
+    background-color: rgba(36, 24, 24, 0.479);
 }
 
 
@@ -36,6 +36,7 @@ body {
 .nav-item {
     padding: 10px;
     list-style: none;
+    font-size: .9em;
 }
 
 .primeira-section {
@@ -71,21 +72,32 @@ body {
     list-style: none;
 }
 
-.transacoesUl li {
+.receita, .despesa {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: rgb(255, 255, 255);
-    width: 400px;
-    padding: 10px 20px;
-    margin: 10px;
+    width: 450px;
+    padding: 10px;
+    margin: 0 10px 15px 10px;
     border-radius: 0 5px 5px 0;
 }
 
-.transacoesUl li span {
+.spanTipo {
+    font-size: .8em;
+}
+
+.span {
     color: black;
     text-align: center;
-    width: 100px;
+    width: 80px;
+    font-size: .9em;
 }
+
+.spanDesc {
+    width: 60%;
+}
+
 
 .receita {
     border-left: solid 5px rgb(0, 172, 129);
@@ -104,7 +116,7 @@ body {
 .btn {
     color: black;
     padding: 10px 20px;
-    margin: 20px 10px;
+    margin: 20px 3px;
     border: none;
     border-radius: 5px;
     transition: .3s;
@@ -125,11 +137,11 @@ body {
 }
 
 [receita] .btnSubmit {
-    background-color: rgb(0, 137, 191);
+    background-color: rgb(0, 191, 134);
     color: white;
 }
 [receita] .btnSubmit:hover {
-    background-color: rgb(0, 107, 150);
+    background-color: rgb(1, 161, 113);
 }
 
 [despesa] .btnSubmit {
@@ -148,10 +160,9 @@ body {
     border-radius: 150px;
 }
 
-.registros {
+.containerRegistros {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
 }
 
 .form {
@@ -171,4 +182,16 @@ body {
 
 .none {
     display: none;
+}
+
+@media(max-width: 520px) {
+    .transacoesUl li {
+        width: 90%;
+    }
+}
+
+@media(max-width: 420px) {
+    .form .btn {
+        width: 150px;
+    }
 }
