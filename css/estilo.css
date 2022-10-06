@@ -10,7 +10,7 @@
 }
 
 body {
-    background: linear-gradient(to right, rgb(0, 191, 143), rgb(0, 21, 16));
+    background: linear-gradient(to left, rgb(58, 138, 122), rgb(9, 54, 55));
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -23,7 +23,6 @@ body {
     align-items: center;
     background-color: rgba(36, 24, 24, 0.479);
 }
-
 
 .logo {
     margin-left: 20px;
@@ -101,8 +100,21 @@ body {
     font-size: .9em;
 }
 
-.spanDesc {
-    width: 60%;
+    /* .spanDesc {
+        width: 40%;
+    } */
+
+.apagar {
+    background-color: crimson;
+    padding: 5px;
+    width: 30px;
+    text-align: center;
+    border-radius: 100px;
+    box-shadow: -1px 1px 3px black;
+}
+
+.apagar:hover {
+    background-color: rgb(175, 18, 49);
 }
 
 .receita {
@@ -133,7 +145,7 @@ body {
 }
 
 .btn:hover {
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(121, 121, 121);
 }
 
 .btnSubmitR, .btnSubmitD {
@@ -192,7 +204,8 @@ body {
 
 @media(max-width: 520px) {
     .transacoesUl li {
-        width: 85%;
+        font-size: .7em;
+        width: 95%;
     }
 }
 

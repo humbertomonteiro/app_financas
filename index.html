@@ -24,7 +24,7 @@
             <ul class="nav">
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/">home</a>
+                    <a class="nav-link" href="">Home</a>
                 </li>
 
                 <li class="nav-item">
@@ -42,7 +42,11 @@
 
     <main id="main">
 
+        <!-- Home -->
+
         <section id="home" class="home">
+
+            <!-- Balanço -->
 
             <div class="card">
 
@@ -54,10 +58,14 @@
 
             <div class="cards">
 
+                 <!-- Receitas -->
+
                 <div class="card">
                     <h3>Receitas</h3>
                     <h2 id="receitasMes"></h2>
                 </div>
+
+                <!-- Despesas -->
 
                 <div class="card">
                     <h3>Despesas</h3>
@@ -74,7 +82,7 @@
 
                     <button id="btnReceitas" class="btn btReceitas">Receitas</button>
                     
-                    <button id="btnDespesasCard" class="btn btnCartao">Despesas Cartão</button>
+                    <button id="btnDespesasCard" class="btn btnCartao none">Despesas Cartão</button>
                     
                     <button id="btnDespesas" class="btn btnDespesas">Despesas</button>
                 
@@ -84,15 +92,19 @@
 
         </section>
 
+        <!-- Transações -->
+
         <section id="transacoes" class="trasacoes none">
 
             <h1 class="transacoesH2">Transações</h1>
 
             <ul id="transacoesUl" class="transacoesUl">
-    
+             <!-- lis passadas por js -->
             </ul>
 
         </section>
+
+        <!-- Inputs para registrar transações -->
 
         <section id="registros">
             <div class="registros">
@@ -102,7 +114,9 @@
 
                     <div> 
                         <input id="data" class="btn" type="date">
+
                         <select  class="btn" name="" id="tipo">
+                        <!-- options passadas por js -->
                         </select>
                     </div>
                   

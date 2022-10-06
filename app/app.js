@@ -21,14 +21,13 @@ const btnTransacoes = document.querySelector('#btnTransacoes')
 const home = document.querySelector('#home')
 const transacoesLink = document.querySelector('#transacoes')
 
-//
+//inputs
 const data = document.querySelector('#data')
 const tipo = document.querySelector('#tipo')
 const descricao = document.querySelector('#descricao')
 const valor = document.querySelector('#valor')
 
-
-
+//array das transações
 let todasTransacoes = []
 
 function funcoesDeBotoes() {
@@ -116,6 +115,17 @@ const transacoes = (data, tipo, descricao, valor) => {
 
 }
 
+// const criaCartao = (nome, vencimento, feichamento) => {
+//     return {
+//         nome,
+//         vencimento,
+//         feichamento
+//     }
+// }
+
+// const novoCartao = criaCartao()
+// console.log(novoCartao)
+
 //fução factory
 function metodos(a) {
 
@@ -150,10 +160,14 @@ function metodos(a) {
         const todasTransacoesAtualizadas = []
     
         for(let i = 1; i <= ids; i++) {
-        const transacoes = localStorage.getItem(i)
-        const transacoesObj = JSON.parse(transacoes)
+        const transacoes = JSON.parse(localStorage.getItem(i))
+
+        if(transacoes === null) {
+            continue
+        }
         
-        todasTransacoesAtualizadas.push(transacoesObj)
+        transacoes.id = i
+        todasTransacoesAtualizadas.push(transacoes)
 
         }
 
@@ -165,21 +179,29 @@ function metodos(a) {
 
         const li = document.createElement('li')
         const span = document.createElement('span')
-    
+
         if(x.valor < 0) li.classList.add('despesa')
         else li.classList.add('receita')
     
         li.innerHTML = `
+        <span class="span">${x.tipo}</span>
         <span class="span">${x.data}</span> 
         <span class="span spanDesc">${x.descricao}</span> 
         <span class="span">${x.valor}.00</span>
         `
 
-        span.classList.add('spanTipo')
-        span.innerHTML = `${x.tipo}`
-    
+        span.innerHTML = 'x'
+        span.classList.add('apagar')
+        span.id = x.id
+        const idSpan = span.id
+
+        span.onclick = () => {
+            localStorage.removeItem(idSpan)
+            li.classList.add('none')
+        }
+
+        li.append(span)
         transacoesUl.prepend(li)
-        transacoesUl.prepend(span)
     }
 
     return {
@@ -260,3 +282,7 @@ form.addEventListener('submit', e => {
     descricao.value = ''
     valor.value = ''
 })
+
+const apagando = () => {
+    
+}
