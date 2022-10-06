@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, rgb(0, 191, 143), rgb(0, 21, 16));
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.479);
+}
+
+
+.logo {
+    margin-left: 20px;
+}
+
+.nav {
+    display: flex;
+}
+
+.nav-item {
+    padding: 10px;
+    list-style: none;
+}
+
+.primeira-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.saldo {
+    margin: auto;
+}
+
+.cards {
+    display: flex;
+}
+
+.card {
+    margin: 10px 50px;
+    text-align: center;
+}
+
+.cad-link {
+    padding: 10px;
+}
+
+.transacoesUl {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.transacoesUl li {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    width: 400px;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 0 5px 5px 0;
+}
+
+.transacoesUl li span {
+    color: black;
+    text-align: center;
+    width: 100px;
+}
+
+.receita {
+    border-left: solid 5px rgb(0, 172, 129);
+}
+
+.despesa {
+    border-left: solid 5px red;
+}
+
+.botoesTransacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    color: black;
+    padding: 10px 20px;
+    margin: 20px 10px;
+    border: none;
+    border-radius: 5px;
+    transition: .3s;
+}
+
+::placeholder{
+    color: black;
+}
+
+.btn:hover {
+    background-color: rgb(0, 191, 143);
+}
+
+.btnSubmitR, .btnSubmitD {
+    border: solid 2px black;
+    font-weight: bolder;
+    color: white;
+}
+
+[receita] .btnSubmit {
+    background-color: rgb(0, 137, 191);
+    color: white;
+}
+[receita] .btnSubmit:hover {
+    background-color: rgb(0, 107, 150);
+}
+
+[despesa] .btnSubmit {
+    background-color: rgb(191, 13, 0);
+    color: white;
+}
+
+[despesa] .btnSubmit:hover {
+    background-color: rgb(150, 10, 0);
+
+}
+
+.btn-transacao {
+    font-size: 1.8em;
+    padding: 10px 20px;
+    border-radius: 150px;
+}
+
+.registros {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form h2 {
+    margin-bottom: 10px;
+}
+
+.form .btn {
+    margin: 10px 10px;
+    width: 190px;
+}
+
+.none {
+    display: none;
+}

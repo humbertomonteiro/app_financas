@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilo.css">
+    <title>Orçamento</title>
+</head>
+<body>
+    <header class="header">
+        <aside class="logo">
+            <a href=""> My Finance
+                <img src="" alt="">
+            </a>
+        </aside>
+        <nav>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        Cadastro de despesa
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">
+                        Consultas
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="primeira-section">
+            <div class="card">
+                <h2>Saldo atual</h2>
+                <h2 id="saldoAtual">0</h2>
+            </div>
+            <div id="transacoes-cadastradas" class="cards">
+                <div class="card">
+                    <h3>Receitas</h3>
+                    <h2 id="receitasMes"></h2>
+                </div>
+                <div class="card">
+                    <h3>Despesas</h3>
+                    <h2 id="despesasMes"></h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="trasacoes">
+            <div>
+                <ul id="transacoesUl" class="transacoesUl">
+
+                </ul>
+            </div>
+        </section>
+
+        <section class="botoesTransacoes">
+            <button id="mostrarTransacoes" class="btn btn-transacao">+</button>
+            <div id="btnTransitions" class="none">
+                <button id="btnReceitas" class="btn btn-receitas">Receitas</button>
+                <button id="btnDespesasCard" class="btn btn-despesas">Despesas Cartão</button>
+                <button id="btnDespesas" class="btn btn-despesas">Despesas</button>
+            </div>
+        </section>
+
+        <section id="registros">
+            <div class="registros">
+                <form id="form" class="form none" action="">
+                    <h2 id="h2Form"></h2>
+                    <div> 
+                        <input id="data" class="btn" type="date">
+                        <select  class="btn" name="" id="tipo">
+                        </select>
+                    </div>
+                  
+                    <div>
+                        <input id="descricao" class="btn" type="text" placeholder="Descrição">
+                        <input id="valor" class="btn" type="text" placeholder="Valor">
+                    </div>
+
+                    <button id="submit" type="submit" class="btn btnSubmit">Pronto</button>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <script src="./app/app.js"></script>
+</body>
+</html>
