@@ -33,14 +33,20 @@ body {
 
 .nav {
     display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 .nav-item {
     padding: 10px;
     list-style: none;
-    font-size: .9em;
+    font-size: .8em;
 }
 
+.nav-link {
+    display: flex;
+    flex-direction: column;
+}
 
 /* componentes */
 .saldo {
@@ -51,6 +57,8 @@ body {
     padding-bottom: 20px;
 }
 
+
+/* saldo atual */
 .home .saldo h2 {
     font-size: 2.5em;
 }
@@ -94,10 +102,16 @@ h3 {
     margin: 20px;
 }
 
+.inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
 .btn {
     margin: 5px;
     height: 35px;
-    width: 180px;
+    width: 170px;
     border-radius: 5px;
     border: none;
     color: gray;
@@ -112,7 +126,7 @@ select option {
 }
 
 .btnTransacoes .btnReceitas, .btnDespesas {
-    width: 100px;
+    width: 120px;
     color: white;
     font-weight: bolder;
     text-shadow: 1px 1px 1px black;

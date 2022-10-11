@@ -15,10 +15,10 @@
 
 .receita, .despesa {
     display: grid;
+    width: 450px;
     grid-template-columns: 100px 1fr 100px 37px 37px;
     align-items: center;
     background-color: rgb(255, 255, 255);
-    width: 450px;
     margin-bottom: 2px;
 }
 
@@ -38,10 +38,6 @@
 
 .apagar, .resolver {
     padding: 10px;
-    /* padding: 10px;
-    width: 36px;
-    border-radius: 25px;
-    box-shadow: -1px 1px 3px rgb(116, 116, 116); */
 }
 
 .apagar {
@@ -64,19 +60,17 @@
     display: none;
 }
 
+@media(max-width: 375px) {
+    
+    .receita, .despesa {
+        width: 350px;
+        grid-template-columns: 80px 1fr 80px 30px 30px;
+    }
+} 
+
 /* @media(max-width: 520px) {
     .transacoesUl li {
         font-size: .7em;
         width: 90%;
     }
-}
-
-@media(max-width: 420px) {
-    .form .btn {
-        width: 150px;
-    }
-
-    .card h2 {
-        font-size: 1.2em;
-    }
-} */
+}*/
