@@ -17,6 +17,7 @@ const h2Form = document.querySelector('#h2Form')
 //links nav
 const btnTransacoes = document.querySelector('#btnTransacoes')
 const home = document.querySelector('#home')
+const registros = document.querySelector('#registros')
 const transacoesLink = document.querySelector('#transacoes')
 
 //inputs
@@ -41,8 +42,8 @@ function funcoesDeBotoes() {
         btn.onclick = e => {
             e.preventDefault()
             btn2.classList.add('none')
-            btn3.classList.remove('none')
-            btn4.classList.add('none')
+            btn3.classList.add('none')
+            btn4.classList.remove('none')
         }
     }
 
@@ -99,7 +100,7 @@ const btn = funcoesDeBotoes()
 
 btn.receita(btnReceitas)
 btn.despesa(btnDespesas)
-btn.btnMostraRemove(btnTransacoes, home, transacoesLink, form)
+btn.btnMostraRemove(btnTransacoes, home, registros, transacoesLink)
 
 const transacoes = (data, tipo, descricao, valor) => {
 
@@ -187,16 +188,20 @@ function metodos(a) {
         <span class="span">${x.valor}.00</span>
         `
 
-        apagar.innerHTML = 'x'
+        apagar.innerHTML = '<i class="fa-solid fa-trash-can"></i>'
         apagar.classList.add('apagar')
         apagar.id = x.id
-        const idapagar = apagar.id
+        const idApagar = apagar.id
+
+        resolver.innerHTML = '<i class="fa-solid fa-circle-check"></i>'
+        resolver.classList.add('resolver')
 
         apagar.onclick = () => {
-            localStorage.removeItem(idapagar)
+            localStorage.removeItem(idApagar)
             li.classList.add('none')
         }
 
+        li.append(resolver)
         li.append(apagar)
         transacoesUl.prepend(li)
     }

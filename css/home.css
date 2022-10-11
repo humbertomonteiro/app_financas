@@ -47,7 +47,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px;
+    margin: 35px 0 17px 0;
     padding-bottom: 20px;
 }
 
@@ -101,6 +101,14 @@ h3 {
     border-radius: 5px;
     border: none;
     color: gray;
+}
+
+.btn::placeholder {
+    color: black;
+}
+
+select option {
+    color: black;
 }
 
 .btnTransacoes .btnReceitas, .btnDespesas {

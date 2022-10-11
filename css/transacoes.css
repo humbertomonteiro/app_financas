@@ -1,3 +1,9 @@
+.transacoesH2 {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    margin: 30px;
+}
 
 .transacoesUl {
     display: flex;
@@ -7,59 +13,51 @@
     list-style: none;
 }
 
-.transacoesH2 {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-    margin: 30px;
-}
-
 .receita, .despesa {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 100px 1fr 100px 37px 37px;
     align-items: center;
     background-color: rgb(255, 255, 255);
     width: 450px;
-    padding: 10px;
-    margin: 0 5px 15px 5px;
-    border-radius: 0 5px 5px 0;
-}
-
-.spanTipo {
-    font-size: .8em;
+    margin-bottom: 2px;
 }
 
 .span {
     color: black;
     text-align: center;
-    width: 80px;
     font-size: .9em;
 }
 
-    /* .spanDesc {
-        width: 40%;
-    } */
-
-
 .receita {
-    border-left: solid 5px rgb(3, 252, 252);
+    border-left: solid 5px rgb(0, 255, 0);
 }
 
 .despesa {
     border-left: solid 5px red;
 }
 
+.apagar, .resolver {
+    padding: 10px;
+    /* padding: 10px;
+    width: 36px;
+    border-radius: 25px;
+    box-shadow: -1px 1px 3px rgb(116, 116, 116); */
+}
+
 .apagar {
-    background-color: crimson;
-    padding: 5px;
-    width: 30px;
-    text-align: center;
-    border-radius: 100px;
-    box-shadow: -1px 1px 3px black;
+    background-color: red;
 }
 
 .apagar:hover {
     background-color: rgb(175, 18, 49);
+}
+
+.resolver {
+    background-color: rgb(0, 255, 0);
+}
+
+.resolver:hover {
+    background-color: rgb(2, 218, 2);
 }
 
 .none {
