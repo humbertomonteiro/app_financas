@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/estilo.css">
+    
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/transacoes.css">
+
+    <script src="https://kit.fontawesome.com/b6c34f0ed7.js" crossorigin="anonymous"></script>
     <title>Orçamento</title>
 </head>
 <body>
@@ -48,9 +52,9 @@
 
             <!-- Balanço -->
 
-            <div class="card">
+            <div class="saldo">
 
-                <h2>Saldo atual</h2>
+                <h3>Saldo atual</h3>
 
                 <h2 id="saldoAtual">0</h2>
 
@@ -58,34 +62,15 @@
 
             <div class="cards">
 
-                 <!-- Receitas -->
-
-                <div class="card">
-                    <h3>Receitas</h3>
+                <div class="card cardSal">
+                    <h3>Receitas<i class="fa-solid fa-arrow-down"></i></h3>
                     <h2 id="receitasMes">R$</h2>
                 </div>
 
-                <!-- Despesas -->
 
-                <div class="card">
-                    <h3>Despesas</h3>
+                <div class="card cardDes">
+                    <h3>Despesas<i class="fa-solid fa-arrow-up"></i></h3>
                     <h2 id="despesasMes">R$</h2>
-                </div>
-
-            </div>
-
-            <div class="botoesTransacoes">
-
-                <button id="mostrarTransacoes" class="btn btnTransacao">+</button>
-                
-                <div id="btnTransitions" class="none">
-
-                    <button id="btnReceitas" class="btn btReceitas">Receitas</button>
-                    
-                    <button id="btnDespesasCard" class="btn btnCartao none">Despesas Cartão</button>
-                    
-                    <button id="btnDespesas" class="btn btnDespesas">Despesas</button>
-                
                 </div>
 
             </div>
@@ -107,7 +92,19 @@
         <!-- Inputs para registrar transações -->
 
         <section id="registros">
+
             <div class="registros">
+                
+                <div class="btnTransacoes">
+
+                    <button id="btnReceitas" class="btn btnReceitas">Receitas</button>
+                    
+                    <button id="btnDespesasCard" class="btn btnCartao none">Despesas Cartão</button>
+                    
+                    <button id="btnDespesas" class="btn btnDespesas">Despesas</button>
+                
+                </div>
+
                 <form id="form" class="form none" action="">
 
                     <h2 id="h2Form"></h2>

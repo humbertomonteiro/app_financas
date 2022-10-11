@@ -6,8 +6,6 @@ const receitasMes = document.querySelector('#receitasMes')
 const despesasMes = document.querySelector('#despesasMes')
 
 //botões para adicionar transações
-const mostrarTransacoes = document.querySelector('#mostrarTransacoes')
-const btnTransitions = document.querySelector('#btnTransitions')
 const btnReceitas = document.querySelector('#btnReceitas')
 const btnDespesas = document.querySelector('#btnDespesas')
 
@@ -56,7 +54,7 @@ function funcoesDeBotoes() {
         btn.onclick = () => {
             form.setAttribute('receita', true)
             form.removeAttribute('despesa')
-            h2Form.innerHTML ='Reginstro de novas Receitas'
+            h2Form.innerHTML ='<h4>Reginstro de novas Receitas</h4>'
             tipo.innerHTML = `<option>Salario</option>
             <option>Renda Extra</option>
             <option>Presente</option>
@@ -73,7 +71,7 @@ function funcoesDeBotoes() {
         btn.onclick = () => {
             form.setAttribute('despesa', true)
             form.removeAttribute('receita')
-            h2Form.innerHTML ='Reginstro de novas Despesas'
+            h2Form.innerHTML ='<h4>Reginstro de novas Despesas</h4>'
             tipo.innerHTML = `<option>Alimentação</option>
             <option>Educação</option>
             <option>Lazer</option>
@@ -99,7 +97,6 @@ function funcoesDeBotoes() {
 }
 const btn = funcoesDeBotoes()
 
-btn.btnMostrar(mostrarTransacoes, btnTransitions, form)
 btn.receita(btnReceitas)
 btn.despesa(btnDespesas)
 btn.btnMostraRemove(btnTransacoes, home, transacoesLink, form)
@@ -178,29 +175,29 @@ function metodos(a) {
     function addTransacoes(x) {
 
         const li = document.createElement('li')
-        const span = document.createElement('span')
+        const apagar = document.createElement('span')
+        const resolver = document.createElement('span')
 
         if(x.valor < 0) li.classList.add('despesa')
         else li.classList.add('receita')
     
         li.innerHTML = `
         <span class="span">${x.tipo}</span>
-        <span class="span">${x.data}</span> 
         <span class="span spanDesc">${x.descricao}</span> 
         <span class="span">${x.valor}.00</span>
         `
 
-        span.innerHTML = 'x'
-        span.classList.add('apagar')
-        span.id = x.id
-        const idSpan = span.id
+        apagar.innerHTML = 'x'
+        apagar.classList.add('apagar')
+        apagar.id = x.id
+        const idapagar = apagar.id
 
-        span.onclick = () => {
-            localStorage.removeItem(idSpan)
+        apagar.onclick = () => {
+            localStorage.removeItem(idapagar)
             li.classList.add('none')
         }
 
-        li.append(span)
+        li.append(apagar)
         transacoesUl.prepend(li)
     }
 
