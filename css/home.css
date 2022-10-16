@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 :root {
-    --cor-receita: rgb(2, 167, 2);
+    --cor-receita: rgb(0, 110, 0);
     --cor-despesa: rgb(206, 0, 0);
 }
 
@@ -104,7 +104,7 @@ h3 {
 }
 
 .registros h2 {
-    margin: 20px;
+    margin: 15px;
 }
 
 .inputs {
@@ -133,8 +133,8 @@ select option {
 .btnTransacoes .btnReceitas, .btnDespesas {
     width: 120px;
     color: white;
+    font-size: 1.1em;
     font-weight: bolder;
-    text-shadow: 1px 1px 1px black;
 }
 
 .btnTransacoes .btnReceitas {

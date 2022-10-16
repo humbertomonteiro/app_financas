@@ -10,12 +10,20 @@
     margin: 30px;
 }
 
-.transacoesUl {
+.mes {
+    height: 50em;
+}
+
+[ano] {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     list-style: none;
+}
+
+[ano] ul {
+    margin-top: 20px;
 }
 
 .receita, .despesa {
