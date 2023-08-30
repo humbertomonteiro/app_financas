@@ -1,7 +1,8 @@
 # app_financas
- Aplicação para registrar receitas e despesas
-
-
+ Aplicação para registrar receitas e despesas que usa apanas HTMl, CSS e JavaScript. Esse projeto pessoal 
+ vai cadastrar receitas e despesas no LocalStorage e mostrar de uma forma simples como está a situação financeira 
+ do usuário. 
+ 
 # Página Home
 
 O home é o index da aplicação e é onde poderemos cadastrar despesas ou receitas. Vamos ver a soma de 
